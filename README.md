@@ -282,7 +282,7 @@ String url = "https://covid.ourworldindata.org/data/ecdc/new_deaths.csv";
         ...
 ```
 
-## 5.In cb2.setOnAction method handle(ActionEvent actionEvent)in BarCHartController.java and LineChartController.java
+## 5.In cb2.setOnAction method handle(ActionEvent actionEvent) in BarChartController.java and LineChartController.java
 **Refactor**: In if == can use to compatre string so i change it to equals
 
 **Before refactor:**
