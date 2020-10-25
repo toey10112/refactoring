@@ -4,6 +4,7 @@ Bhatara PA4 [Covid19-Tracker](https://github.com/OOP2020/pa4-bhatara007)
 ## 1.In setAll() method in WorldController.java
 **Refactor**: This method has too many line so we need to exact method to separate
 their work and make it easy to read and shorter code.
+
 **Before refactor:**
 ```java
 public void setAll(){
@@ -74,6 +75,7 @@ public void setAll(){
         t4.setText(diff4 + "% )");
     }
 ```
+
 **After refactor:**
 ```
 public void setAll(){
@@ -208,6 +210,7 @@ public void setAll(){
 
     }
 ```
+
 ## 2.In initialize() and draw method in BarChartController.java 
 **Refactor**: In this two methods there are some line that duplicate so I use extact method to refactor it.
 
@@ -224,6 +227,7 @@ This is code that duplicate in two methods
 
 
 ```
+
 **After refactor:**
 
 ```
@@ -248,6 +252,7 @@ This is code that duplicate in two methods
 
 ## 4.In getCountryConfirmCase(String type, String country) method in GraphData.  
 **Refactor**: It hard to read so I use switch case to make it look easy to read.
+
 **Before refactor:**
 ```
 
@@ -258,6 +263,7 @@ This is code that duplicate in two methods
         else if (type.equals("New confirmed cases")) url = "https://covid.ourworldindata.org/data/ecdc/new_cases.csv";
     ...
 ```
+
 **After refactor:**
 ```
 String url = "https://covid.ourworldindata.org/data/ecdc/new_deaths.csv";
