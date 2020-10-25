@@ -311,6 +311,65 @@ public void handle(ActionEvent actionEvent) {
 ```
 
 
+## 6.In setAll() method in LineChartController.java and BarChartController.java
+**Refactor**: In this two methods there are some line that duplicate so I use extact method and make it can use in two files by make a BarchartController class is a sub-class from LineChartController class.
+
+
+**Before refactor:**
+```
+public void setAll() {
+        try {
+            alert.setText("");
+            lineChart.setTitle(countryName);
+
+            confirmCase = gd.getCountryConfirmCase(graphType, countryName);
+            showType.setValue(graphType);
+
+            cb2.setValue(datee.get(datee.size() - 1));
+            casee = confirmCase.get(confirmCase.size() - 1);
+
+            for (int i = 1; i < datee.size(); i++) {
+                XYChart.Data<String, Number> data = new XYChart.Data<String, Number>(String.valueOf(datee.get(i)), Integer.parseInt(confirmCase.get(i)));
+                series.getData().add(data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        lb1.setText(String.format("%s : %,d cases", graphType, Integer.parseInt(casee)));
+
+    }
+```
+
+
+**After refactor:**
+```
+public void setAll() {
+        try {
+            setChart();
+
+            for (int i = 1; i < datee.size(); i++) {
+                XYChart.Data<String, Number> data = new XYChart.Data<String, Number>(String.valueOf(datee.get(i)), Integer.parseInt(confirmCase.get(i)));
+                series.getData().add(data);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        lb1.setText(String.format("%s : %,d cases", graphType, Integer.parseInt(casee)));
+
+    }
+
+    public void setChart() throws Exception {
+        alert.setText("");
+        lineChart.setTitle(countryName);
+
+        confirmCase = gd.getCountryConfirmCase(graphType, countryName);
+        showType.setValue(graphType);
+
+        cb2.setValue(datee.get(datee.size() - 1));
+        casee = confirmCase.get(confirmCase.size() - 1);
+    }
+```
+
 
 
 
