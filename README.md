@@ -282,6 +282,36 @@ String url = "https://covid.ourworldindata.org/data/ecdc/new_deaths.csv";
         ...
 ```
 
+## 5.In cb2.setOnAction method handle(ActionEvent actionEvent)in BarCHartController.java and LineChartController.java
+**Refactor**: In if == can use to compatre string so i change it to equals
+
+**Before refactor:**
+```
+public void handle(ActionEvent actionEvent) {
+                for (int i = 0; i < confirmCase.size(); i++) {
+                    if (cb2.getValue() == datee.get(i)) {
+                        casee = confirmCase.get(i);
+                    }
+                    lb1.setText(String.format("%s : %,d cases", graphType, Integer.parseInt(casee)));
+                }
+            }
+```
+
+**After refactor:**
+
+```
+public void handle(ActionEvent actionEvent) {
+                for (int i = 0; i < confirmCase.size(); i++) {
+                    if (cb2.getValue().equals(datee.get(i))) {
+                        casee = confirmCase.get(i);
+                    }
+                    lb1.setText(String.format("%s : %,d cases", graphType, Integer.parseInt(casee)));
+                }
+            }
+```
+
+
+
 
 
 
