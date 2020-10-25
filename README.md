@@ -247,10 +247,10 @@ This is code that duplicate in two methods
 
 ```
 
-## 3.Delete setAlert(String alertText) method in BarChartController.
+## 3.Delete setAlert(String alertText) method in BarChartController.java
 **Refactor**: I delete setAlert(String alertText) method because it is dead code.
 
-## 4.In getCountryConfirmCase(String type, String country) method in GraphData.  
+## 4.In getCountryConfirmCase(String type, String country) method in GraphData.java  
 **Refactor**: It hard to read so I use switch case to make it look easy to read.
 
 **Before refactor:**
